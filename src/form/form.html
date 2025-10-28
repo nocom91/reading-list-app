@@ -1,0 +1,49 @@
+<form [formGroup]="bookListForm" tuiForm="m">
+  <tui-textfield>
+    <label tuiLabel for="name">Name</label>
+    <input type="text" tuiTextfield formControlName="name" id="name" />
+  </tui-textfield>
+  <tui-textfield>
+    <label tuiLabel for="description">Description</label>
+    <textarea
+      type="text"
+      tuiTextarea
+      formControlName="description"
+      id="description"
+      [min]="3"
+      [max]="8"
+    ></textarea>
+  </tui-textfield>
+  <div formArrayName="books">
+    <header tuiHeader>
+      <hgroup tuiTitle>
+        <h5>Books</h5>
+      </hgroup>
+    </header>
+    <button size="m" tuiButton type="button" appearance="secondary" (click)="addNewBook()">Add new</button>
+
+    @for (books of bookListForm.controls.books.controls; track $index) {
+    <div tuiCardLarge tuiAppearance="secondary-destructive">
+      <tui-textfield>
+        <label tuiLabel for="bookName">Name</label>
+        <input type="text" tuiTextfield formControlName="bookName" id="bookName" />
+      </tui-textfield>
+      <tui-textfield>
+        <label tuiLabel for="author">Author</label>
+        <input type="text" tuiTextfield formControlName="author" id="author" />
+      </tui-textfield>
+      <tui-textfield>
+        <label tuiLabel for="bookDescription">Description</label>
+        <textarea
+          type="text"
+          tuiTextarea
+          formControlName="bookDescription"
+          id="bookDescription"
+          [min]="3"
+          [max]="8"
+        ></textarea>
+      </tui-textfield>
+    </div>
+    }
+  </div>
+</form>
