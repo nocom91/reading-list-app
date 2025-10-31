@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run reading-list-app:storybook",
-    "build-storybook": "ng run reading-list-app:build-storybook"
+    "build-storybook": "ng run reading-list-app:build-storybook",
+    "lint": "ng lint"
   },
   "prettier": {
     "printWidth": 100,
@@ -51,6 +52,8 @@
     "@storybook/addon-onboarding": "^9.1.15",
     "@storybook/angular": "^9.1.15",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "20.5.0",
+    "eslint": "^9.38.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -60,6 +63,7 @@
     "less": "^4.4.2",
     "less-loader": "^12.3.0",
     "storybook": "^9.1.15",
-    "typescript": "~5.9.2"
+    "typescript": "~5.9.2",
+    "typescript-eslint": "8.46.1"
   }
 }
