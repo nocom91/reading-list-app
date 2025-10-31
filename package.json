@@ -51,6 +51,7 @@
     "@storybook/addon-docs": "^9.1.15",
     "@storybook/addon-onboarding": "^9.1.15",
     "@storybook/angular": "^9.1.15",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "20.5.0",
     "eslint": "^9.38.0",

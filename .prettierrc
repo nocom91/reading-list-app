@@ -9,5 +9,8 @@
   "bracketSameLine": true,
   "printWidth": 150,
   "endOfLine": "auto",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "importOrder": ["^@angular/(.*)$", "<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }
