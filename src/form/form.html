@@ -20,9 +20,11 @@
         <h5>Books</h5>
       </hgroup>
     </header>
-    <button size="m" tuiButton type="button" appearance="secondary" (click)="addNewBook()">Add new</button>
+    <button size="m" tuiButton type="button" appearance="secondary" (click)="addNewBook()">
+      Add new
+    </button>
 
-    @for (books of bookListForm.controls.books.controls; track $index) {
+    <!-- @for (books of bookListForm.controls.books.controls; track $index) {
     <div tuiCardLarge tuiAppearance="secondary-destructive">
       <tui-textfield>
         <label tuiLabel for="bookName">Name</label>
@@ -44,6 +46,6 @@
         ></textarea>
       </tui-textfield>
     </div>
-    }
+    } -->
   </div>
 </form>
