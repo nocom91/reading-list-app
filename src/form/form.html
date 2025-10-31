@@ -49,3 +49,9 @@
     } -->
   </div>
 </form>
+<div>
+  <tui-textfield tuiChevron>
+    <input placeholder="Install library" tuiSelect />
+    <tui-data-list-wrapper *tuiTextfieldDropdown [items]="booksList() | tuiFilterByInput" />
+  </tui-textfield>
+</div>

@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, inject, resource } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TuiTextfieldComponent, TuiLabel, TuiTextfieldDirective, TuiAppearance, TuiButton } from "@taiga-ui/core";
-import { TuiTextarea } from '@taiga-ui/kit';
+import { TuiTextfield, TuiLabel, TuiTextfieldDirective, TuiAppearance, TuiButton, TuiDataList } from "@taiga-ui/core";
+import { TuiComboBox, TuiTextarea, TuiStringifyContentPipe, TuiFilterByInputPipe, TuiSelectDirective, TuiDataListWrapper, TuiChevron, TuiSelect } from '@taiga-ui/kit';
 import { TuiForm, TuiCardLarge, TuiHeader } from '@taiga-ui/layout';
 
 @Component({
   selector: 'app-form',
-  imports: [ReactiveFormsModule, TuiTextfieldComponent, TuiLabel, TuiTextfieldDirective, TuiTextarea, TuiForm, TuiCardLarge, TuiAppearance, TuiHeader, TuiButton],
+  imports: [ReactiveFormsModule, TuiChevron, TuiTextfield, TuiLabel, TuiSelect, TuiTextfieldDirective, TuiTextarea, TuiForm, TuiDataListWrapper, TuiCardLarge, TuiAppearance, TuiHeader, TuiButton, TuiComboBox, TuiStringifyContentPipe, TuiFilterByInputPipe, TuiSelectDirective],
   templateUrl: './form.html',
   styleUrl: './form.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
