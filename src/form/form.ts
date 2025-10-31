@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, resource } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TuiTextfieldComponent, TuiLabel, TuiTextfieldDirective, TuiAppearance, TuiButton } from "@taiga-ui/core";
 import { TuiTextarea } from '@taiga-ui/kit';
@@ -12,6 +12,22 @@ import { TuiForm, TuiCardLarge, TuiHeader } from '@taiga-ui/layout';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Form {
+  private books = resource({
+    loader: async () => {
+      const response = await fetch(`https://gutendex.com/books/`);
+      return await response.json();
+    }
+  });
+
+  protected booksList = computed(() => {
+    const parsedRespose = this.books.value();
+    if (parsedRespose) {
+      return (parsedRespose.results as Array<{ title: string }>).map(res => res.title);
+    }
+
+    return [];
+  });
+
   private formBuilder = inject(FormBuilder);
 
   protected bookListForm = this.formBuilder.group({
