@@ -7,6 +7,17 @@ const meta: Meta<Form> = {
   parameters: {
     layout: 'fullscreen',
   },
+  decorators: [
+    (story) => {
+      return {
+        template: `
+        <tui-root>
+          ${story().template}
+        </tui-root>
+      `,
+      };
+    },
+  ],
 };
 
 export default meta;
