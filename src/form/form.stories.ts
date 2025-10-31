@@ -1,12 +1,12 @@
-import { Meta, StoryObj } from "@storybook/angular";
-import { Form } from "./form";
+import { Meta, StoryObj } from '@storybook/angular';
+import { Form } from './form';
 
 const meta: Meta<Form> = {
-    title: 'Components/Form',
-    component: Form,
-    parameters: {
-        layout: 'fullscreen',
-    }
+  title: 'Components/Form',
+  component: Form,
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export default meta;
