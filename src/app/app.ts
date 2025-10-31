@@ -1,4 +1,4 @@
-import { TuiRoot } from "@taiga-ui/core";
+import { TuiRoot } from '@taiga-ui/core';
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -6,7 +6,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'rl-root',
   imports: [RouterOutlet, TuiRoot],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('reading-list-app');

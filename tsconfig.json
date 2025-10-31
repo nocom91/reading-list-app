@@ -23,10 +23,7 @@
     "strictTemplates": true
   },
   "files": [],
-  "include": [
-    "src/**/*.ts",
-    ".storybook/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", ".storybook/**/*.ts"],
   "references": [
     {
       "path": "./tsconfig.app.json"
