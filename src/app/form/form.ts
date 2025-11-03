@@ -1,44 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject, resource } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import {
-  TuiTextfield,
-  TuiLabel,
-  TuiTextfieldDirective,
-  TuiAppearance,
-  TuiButton,
-  TuiDropdown,
-  TuiDataList,
-} from '@taiga-ui/core';
-import {
-  TuiTextarea,
-  TuiStringifyContentPipe,
-  TuiFilterByInputPipe,
-  TuiDataListWrapper,
-  TuiChevron,
-  TuiSelect,
-} from '@taiga-ui/kit';
-import { TuiForm, TuiCardLarge, TuiHeader } from '@taiga-ui/layout';
 
 @Component({
   selector: 'app-form',
   imports: [
     ReactiveFormsModule,
-    TuiChevron,
-    TuiDropdown,
-    TuiTextfield,
-    TuiLabel,
-    TuiSelect,
-    TuiTextfieldDirective,
-    TuiTextarea,
-    TuiForm,
-    TuiDataList,
-    TuiDataListWrapper,
-    TuiCardLarge,
-    TuiAppearance,
-    TuiHeader,
-    TuiButton,
-    TuiStringifyContentPipe,
-    TuiFilterByInputPipe,
   ],
   templateUrl: './form.html',
   styleUrl: './form.scss',

@@ -1,5 +1,5 @@
-<form [formGroup]="bookListForm" tuiForm="m">
-  <tui-textfield>
+<form [formGroup]="bookListForm">
+  <!-- <tui-textfield>
     <label tuiLabel for="name">Name</label>
     <input type="text" tuiTextfield formControlName="name" id="name" />
   </tui-textfield>
@@ -13,13 +13,8 @@
       [min]="3"
       [max]="8"
     ></textarea>
-  </tui-textfield>
+  </tui-textfield> -->
   <div formArrayName="books">
-    <header tuiHeader>
-      <hgroup tuiTitle>
-        <h5>Books</h5>
-      </hgroup>
-    </header>
     <button size="m" tuiButton type="button" appearance="secondary" (click)="addNewBook()">
       Add new
     </button>
@@ -49,21 +44,4 @@
     } -->
   </div>
 </form>
-<div>
-  <!-- <tui-textfield tuiChevron>
-    <input placeholder="Install library" tuiSelect />
-    <tui-data-list-wrapper *tuiTextfieldDropdown [items]="booksList() | tuiFilterByInput" />
-  </tui-textfield> -->
-  <button tuiButton tuiChevron tuiDropdownOpen type="button" [tuiDropdown]="content">Menu</button>
-  <ng-template #content>
-    <tui-data-list role="menu">
-      @for (book of booksList(); track $index) {
-        <tui-opt-group [label]="book">
-          <p>
-            {{ book }}
-          </p>
-        </tui-opt-group>
-      }
-    </tui-data-list>
-  </ng-template>
-</div>
+<div></div>
