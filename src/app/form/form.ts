@@ -1,10 +1,19 @@
 import { ChangeDetectionStrategy, Component, computed, inject, resource } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { TextareaModule } from 'primeng/textarea';
+
 @Component({
-  selector: 'app-form',
+  selector: 'rl-form',
   imports: [
     ReactiveFormsModule,
+    InputTextModule,
+    ButtonModule,
+    FloatLabelModule,
+    TextareaModule
   ],
   templateUrl: './form.html',
   styleUrl: './form.scss',
@@ -21,7 +30,7 @@ export class Form {
   protected booksList = computed(() => {
     const parsedRespose = this.books.value();
     if (parsedRespose) {
-      return (parsedRespose.results as Array<{ title: string }>).map((res) => res.title);
+      return (parsedRespose.results as { title: string }[]).map((res) => res.title);
     }
 
     return [];

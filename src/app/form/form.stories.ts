@@ -11,9 +11,9 @@ const meta: Meta<Form> = {
     (story) => {
       return {
         template: `
-        <tui-root>
+        <div>
           ${story().template}
-        </tui-root>
+        </div>
       `,
       };
     },

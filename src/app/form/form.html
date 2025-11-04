@@ -1,4 +1,20 @@
 <form [formGroup]="bookListForm">
+  <p-floatlabel variant="on">
+    <input type="text" id="name" formControlName="name" pInputText autocomplete="off" />
+    <label for="name">Name</label>
+  </p-floatlabel>
+  <p-floatlabel variant="on">
+    <textarea
+      pTextarea
+      id="description"
+      formControlName="description"
+      rows="5"
+      cols="30"
+      style="resize: none"
+      class="h-full"
+    ></textarea>
+    <label for="description">On Label</label>
+  </p-floatlabel>
   <!-- <tui-textfield>
     <label tuiLabel for="name">Name</label>
     <input type="text" tuiTextfield formControlName="name" id="name" />
@@ -15,9 +31,7 @@
     ></textarea>
   </tui-textfield> -->
   <div formArrayName="books">
-    <button size="m" tuiButton type="button" appearance="secondary" (click)="addNewBook()">
-      Add new
-    </button>
+    <p-button label="Add new" (onClick)="addNewBook()" />
 
     <!-- @for (books of bookListForm.controls.books.controls; track $index) {
     <div tuiCardLarge tuiAppearance="secondary-destructive">
