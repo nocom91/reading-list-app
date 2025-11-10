@@ -22,15 +22,16 @@ import { TextareaModule } from 'primeng/textarea';
 export class Form {
   private books = resource({
     loader: async () => {
-      const response = await fetch(`https://gutendex.com/books/`);
-      return await response.json();
+      const response = await fetch(`http://localhost:3000/books/`);
+      const books = await response.json();
+      return books || []
     },
   });
 
   protected booksList = computed(() => {
     const parsedRespose = this.books.value();
     if (parsedRespose) {
-      return (parsedRespose.results as { title: string }[]).map((res) => res.title);
+      return (parsedRespose as { name: string }[]).map((res) => res.name);
     }
 
     return [];
