@@ -27,7 +27,8 @@
               },
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/styles.css"
             ]
           },
           "configurations": {
@@ -80,7 +81,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss", 
+              "src/styles.css"
+            ]
           }
         },
         "storybook": {
