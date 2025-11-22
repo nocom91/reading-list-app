@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, resource } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, resource, signal } from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TextareaModule } from 'primeng/textarea';
+import { SelectChangeEvent, SelectModule } from 'primeng/select';
 
 @Component({
   selector: 'rl-form',
@@ -13,7 +14,8 @@ import { TextareaModule } from 'primeng/textarea';
     InputTextModule,
     ButtonModule,
     FloatLabelModule,
-    TextareaModule
+    TextareaModule,
+    SelectModule
   ],
   templateUrl: './form.html',
   styleUrl: './form.scss',
@@ -37,6 +39,10 @@ export class Form {
     return [];
   });
 
+  protected booksLoading = computed(() => this.books.isLoading());
+
+  protected addedBooks = signal<string[]>([]);
+
   private formBuilder = inject(FormBuilder);
 
   protected bookListForm = this.formBuilder.group({
@@ -59,5 +65,12 @@ export class Form {
 
   protected addNewBook() {
     this.booksControls.push(this.buildBookForm());
+  }
+
+
+  protected addBookToList(selectChangeEvent: SelectChangeEvent) {
+    this.addedBooks.update((prevList) => {
+      return [...prevList, selectChangeEvent.value];
+    });
   }
 }
