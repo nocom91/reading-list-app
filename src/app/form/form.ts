@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, resource, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  resource,
+  signal,
+} from '@angular/core';
 import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { InputTextModule } from 'primeng/inputtext';
@@ -15,7 +22,7 @@ import { SelectChangeEvent, SelectModule } from 'primeng/select';
     ButtonModule,
     FloatLabelModule,
     TextareaModule,
-    SelectModule
+    SelectModule,
   ],
   templateUrl: './form.html',
   styleUrl: './form.scss',
@@ -26,14 +33,16 @@ export class Form {
     loader: async () => {
       const response = await fetch(`http://localhost:3000/books/`);
       const books = await response.json();
-      return books || []
+      return books || [];
     },
   });
 
   protected booksList = computed(() => {
     const parsedRespose = this.books.value();
     if (parsedRespose) {
-      return (parsedRespose as { name: string }[]).map((res) => res.name);
+      return (parsedRespose as { name: string }[]).map((res) =>
+        res.name.length > 80 ? res.name.slice(0, 79) + '...' : res.name,
+      );
     }
 
     return [];
@@ -66,7 +75,6 @@ export class Form {
   protected addNewBook() {
     this.booksControls.push(this.buildBookForm());
   }
-
 
   protected addBookToList(selectChangeEvent: SelectChangeEvent) {
     this.addedBooks.update((prevList) => {
