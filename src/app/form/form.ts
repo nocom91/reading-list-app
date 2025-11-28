@@ -14,6 +14,12 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { TextareaModule } from 'primeng/textarea';
 import { SelectChangeEvent, SelectModule } from 'primeng/select';
 
+type Book = {
+  id: number;
+  name: string;
+  author: string;
+};
+
 @Component({
   selector: 'rl-form',
   imports: [
@@ -40,9 +46,7 @@ export class Form {
   protected booksList = computed(() => {
     const parsedRespose = this.books.value();
     if (parsedRespose) {
-      return (parsedRespose as { name: string }[]).map((res) =>
-        res.name.length > 80 ? res.name.slice(0, 79) + '...' : res.name,
-      );
+      return parsedRespose as Book[];
     }
 
     return [];
@@ -81,4 +85,6 @@ export class Form {
       return [...prevList, selectChangeEvent.value];
     });
   }
+
+  protected onBookSelected(event: SelectChangeEvent) {}
 }

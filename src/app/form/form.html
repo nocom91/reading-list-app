@@ -27,7 +27,24 @@
               [showClear]="true"
               [options]="booksList()"
               [loading]="booksLoading()"
-              placeholder="Select a book"></p-select>
+              placeholder="Select a book"
+              (onChange)="onBookSelected($event)">
+      <ng-template #selectedItem
+                   let-selectedBook>
+        <span class="text-gray-900  text-base">{{ selectedBook.name }}</span>
+      </ng-template>
+      <ng-template #item
+                   let-book>
+        <div class="flex flex-col gap-1 justify-start">
+          <span class="text-gray-900 text-lg">
+            {{ book.name.length > 80 ? book.name.slice(0, 79) + '...' : book.name }}
+          </span>
+          <span class="text-gray-700 text-base">
+            {{ book.author }}
+          </span>
+        </div>
+      </ng-template>
+    </p-select>
   </form>
 
   <p-button label="Add new"
