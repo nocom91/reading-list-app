@@ -47,8 +47,6 @@
     "@angular/build": "^20.3.7",
     "@angular/cli": "^20.3.7",
     "@angular/compiler-cli": "^20.3.0",
-    "@storybook/addon-docs": "^9.1.15",
-    "@storybook/addon-onboarding": "^9.1.15",
     "@storybook/angular": "^9.1.15",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/jasmine": "~5.1.0",
