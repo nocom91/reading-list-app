@@ -11,9 +11,9 @@ const preview: Preview = {
         provideAnimationsAsync(),
         providePrimeNG({
           theme: {
-            preset: Aura
-          }
-        })
+            preset: Aura,
+          },
+        }),
       ],
     }),
   ],
