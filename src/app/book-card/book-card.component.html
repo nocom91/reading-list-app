@@ -1,0 +1,11 @@
+<div
+     class="group bg-blue-200 hover:bg-blue-100 rounded-lg shadow-md p-3 grid grid-cols-[1fr_auto] grid-rows-2 relative ">
+    <div class="font-bold text-base text-gray-900 row-start-1 row-end-2 col-start-1 col-end-2">{{ book().name }}</div>
+    <div class="text-gray-600 text-sm row-start-2 row-end-3 col-start-1 col-end-2">{{ book().author }}</div>
+    <button pButton
+            class="row-start-1 row-end-3 col-start-2 p-3 invisible group-hover:visible">
+        <i class="pi pi-times"
+           style="color: var(--p-blue-500)"
+           pButtonIcon></i>
+    </button>
+</div>
