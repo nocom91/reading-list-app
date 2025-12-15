@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, input, output, EventEmitter } from '@angular/core';
 import { Book } from '../models/book.model';
-import { ButtonIcon } from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'rl-book-card',
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ButtonIcon],
+  imports: [ButtonModule],
 })
 export class BookCardComponent {
   book = input.required<Book>();
