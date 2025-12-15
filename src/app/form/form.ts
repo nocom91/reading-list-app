@@ -6,19 +6,22 @@ import {
   resource,
   signal,
 } from '@angular/core';
-import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  ReactiveFormsModule,
+  Validators,
+  FormsModule,
+} from '@angular/forms';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TextareaModule } from 'primeng/textarea';
-import { SelectChangeEvent, SelectModule } from 'primeng/select';
+import { SelectModule } from 'primeng/select';
 
-type Book = {
-  id: number;
-  name: string;
-  author: string;
-};
+import { Book } from '../models/book.model';
+import { BookCardComponent } from '../book-card/book-card.component';
 
 @Component({
   selector: 'rl-form',
@@ -29,6 +32,9 @@ type Book = {
     FloatLabelModule,
     TextareaModule,
     SelectModule,
+    FormsModule,
+
+    BookCardComponent,
   ],
   templateUrl: './form.html',
   styleUrl: './form.scss',
@@ -54,9 +60,13 @@ export class Form {
 
   protected booksLoading = computed(() => this.books.isLoading());
 
-  protected addedBooks = signal<string[]>([]);
+  protected addedBooks = signal<Book[]>([]);
 
   private formBuilder = inject(FormBuilder);
+
+  protected onBookSelected(book: Book) {
+    this.addedBooks.update((prevList) => [...prevList, book]);
+  }
 
   protected bookListForm = this.formBuilder.group({
     name: ['', Validators.required],
@@ -79,12 +89,4 @@ export class Form {
   protected addNewBook() {
     this.booksControls.push(this.buildBookForm());
   }
-
-  protected addBookToList(selectChangeEvent: SelectChangeEvent) {
-    this.addedBooks.update((prevList) => {
-      return [...prevList, selectChangeEvent.value];
-    });
-  }
-
-  protected onBookSelected(event: SelectChangeEvent) {}
 }

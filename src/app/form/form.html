@@ -28,7 +28,7 @@
               [options]="booksList()"
               [loading]="booksLoading()"
               placeholder="Select a book"
-              (onChange)="onBookSelected($event)">
+              (onChange)="onBookSelected($event.value)">
       <ng-template #selectedItem
                    let-selectedBook>
         <span class="text-gray-900  text-base">{{ selectedBook.name }}</span>
@@ -45,6 +45,10 @@
         </div>
       </ng-template>
     </p-select>
+
+    @for (book of addedBooks(); track $index) {
+    <rl-book-card [book]="book"></rl-book-card>
+    }
   </form>
 
   <p-button label="Add new"
