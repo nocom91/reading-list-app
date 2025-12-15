@@ -3,11 +3,22 @@
     <div class="font-bold text-base text-gray-900 row-start-1 row-end-2 col-start-1 col-end-2">{{ book().name }}</div>
     <div class="text-gray-600 text-sm row-start-2 row-end-3 col-start-1 col-end-2">{{ book().author }}</div>
 
-    <p-button icon="pi pi-times"
-              aria-label="Delete"
-              [rounded]="true"
-              [text]="true"
-              severity="danger"
-              size="small"
-              class="invisible group-hover:visible" />
+    <div class="flex flex-row gap-2 row-start-1 row-end-3 items-center">
+        <p-button icon="pi pi-pencil"
+                  aria-label="Edit"
+                  [rounded]="true"
+                  [text]="true"
+                  severity="secondary"
+                  size="small"
+                  class="invisible group-hover:visible"
+                  height="40" />
+        <p-button icon="pi pi-trash"
+                  aria-label="Delete"
+                  [rounded]="true"
+                  [text]="true"
+                  severity="secondary"
+                  size="small"
+                  class="invisible group-hover:visible"
+                  height="40" />
+    </div>
 </div>
