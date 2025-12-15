@@ -26,7 +26,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss", "src/styles.css"]
+            "styles": ["src/tailwind.css", "src/styles.scss"]
           },
           "configurations": {
             "production": {
@@ -78,7 +78,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss", "src/styles.css"]
+            "styles": ["src/tailwind.css", "src/styles.scss"]
           }
         },
         "storybook": {
@@ -89,7 +89,7 @@
             "compodoc": false,
             "port": 6006,
             "experimentalZoneless": true,
-            "styles": ["primeicons/primeicons.css", "src/styles.scss"]
+            "styles": ["src/tailwind.css", "primeicons/primeicons.css", "src/styles.scss"]
           }
         },
         "build-storybook": {

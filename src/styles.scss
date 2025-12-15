@@ -1,8 +1,26 @@
 @use 'primeicons/primeicons.css';
 
-@use 'tailwindcss';
-@plugin 'tailwindcss-primeui';
-@layer tailwind, primeng;
+@plugin 'tailwindcss-primeui'; // keep plugin after the layer declaration
+
+.app-layout {
+  @layer tailwind {
+  }
+}
+
+@layer primeng {
+  .app-layout
+    :where(
+      .p-component,
+      .p-inputtext,
+      .p-inputwrapper,
+      .p-inputnumber,
+      .p-dropdown,
+      .p-button,
+      .p-floatlabel
+    ) {
+    all: revert-layer;
+  }
+}
 
 html,
 body {
