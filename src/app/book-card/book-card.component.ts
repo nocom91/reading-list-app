@@ -11,9 +11,9 @@ import { ButtonModule } from 'primeng/button';
 })
 export class BookCardComponent {
   book = input.required<Book>();
-  onDelete = output<void>();
+  onDelete = output<Book['id']>();
 
   handleDelete() {
-    this.onDelete.emit();
+    this.onDelete.emit(this.book().id);
   }
 }
